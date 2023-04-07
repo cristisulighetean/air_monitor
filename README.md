@@ -1,2 +1,2 @@
-# air_monitor
+# Air monitor system
 Master thesis repo
