@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Air Quality Sensor Node</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script>
+      function getCurrentTime() {
+        const now = new Date();
+        const isoString = now.toISOString();
+        return isoString.slice(0, 19); // Remove milliseconds
+      }
+
+      async function fetchData() {
+        const response = await fetch('/data');
+        const data = await response.json();
+        document.getElementById("name").innerText = `Sensor Node Name: ${data.name}`;
+        document.getElementById("temperature").innerText = `Temperature: ${data.temp.data}${data.temp.unit}`;
+        document.getElementById("pressure").innerText = `Pressure: ${data.pressure.data}${data.pressure.unit}`;
+        document.getElementById("tvoc").innerText = `TVOC: ${data.tvoc.data}${data.tvoc.unit}`;
+        document.getElementById("eco2").innerText = `eCO2: ${data.eco2.data}${data.eco2.unit}`;
+        document.getElementById("time").innerText = `Time of measurement: ${getCurrentTime()}`;
+        document.getElementById("wifi_network").innerText = `Wi-Fi Network: ${data.wifi.network}`;
+        document.getElementById("wifi_signal").innerText = `Network signal strength: ${data.wifi.signal} (1-5)`;
+      }
+    </script>
+  </head>
+  <body onload="fetchData()">
+    <h1>Air Quality Sensor Node</h1>
+    <div class="container">
+      <div class="sensor-data">
+        <div id="name">Sensor Node Name: Node01</div>
+        <div></div>
+        <div id="temperature">Temperature: No data to display yet</div>
+        <div id="pressure">Pressure: No data to display yet</div>
+        <div id="tvoc">TVOC: No data to display yet</div>
+        <div id="eco2">eCO2: No data to display yet</div>
+        <div id="time">Time of measurement: No data to display yet</div>
+        <div id="wifi_network">Wi-Fi Network: No data to display yet</div>
+        <div id="wifi_signal">Network signal strength: No data to display yet</div>
+      </div>
+      <button onclick="location.href='/reset'">Reset</button>
+      <button onclick="location.href='/restart'">Restart</button>
+    </div>
+  </body>
+</html>

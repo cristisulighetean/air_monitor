@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "sensor_node_firmware"
+		}
+	],
+	"settings": {}
+}

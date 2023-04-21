@@ -1,0 +1,161 @@
+:root {
+    --font-family: Arial, Helvetica, sans-serif;
+    --text-color: #000;
+    --background-color: #fff;
+    --topnav-bg-color: #0A1128;
+    --card-bg-color: #fff;
+    --card-title-color: #034078;
+    --input-border-color: #ccc;
+    --submit-bg-color: #034078;
+    --submit-hover-bg-color: #1282A2;
+    --value-color: #1282A2;
+    --state-color: #1282A2;
+    --button-on-bg-color: #034078;
+    --button-on-hover-bg-color: #1282A2;
+    --button-off-bg-color: #858585;
+    --button-off-hover-bg-color: #252524;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-color: #fff;
+      --background-color: #1a1a1a;
+      --topnav-bg-color: #1a1a1a;
+      --card-bg-color: #2c2c2c;
+      --card-title-color: #66BB6A;
+      --input-border-color: #555;
+      --submit-bg-color: #4CAF50;
+      --submit-hover-bg-color: #81C784;
+      --value-color: #81C784;
+      --state-color: #81C784;
+      --button-on-bg-color: #66BB6A;
+      --button-on-hover-bg-color: #81C784;
+      --button-off-bg-color: #66BB6A;
+      --button-off-hover-bg-color: #66BB6A;
+    }
+  }
+  
+  html {
+    font-family: var(--font-family);
+    display: inline-block;
+    text-align: center;
+    color: var(--text-color);
+  }
+  
+  body {
+    background-color: var(--background-color);
+    margin: 0;
+  }
+
+  div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    color: white;
+  }
+  
+  
+  .topnav {
+    overflow: hidden;
+    background-color: var(--topnav-bg-color);
+  }
+  
+  .content {
+    padding: 5%;
+  }
+  
+  .card-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .card {
+    background-color: var(--card-bg-color);
+    box-shadow: 2px 2px 12px 1px rgba(140, 140, 140, 0.5);
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--card-title-color);
+  }
+  
+  input[type=submit] {
+    border: none;
+    color: #FEFCFB;
+    background-color: var(--submit-bg-color);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+  }
+  
+  input[type=submit]:hover {
+    background-color: var(--submit-hover-bg-color);
+  }
+  
+  input[type=text],
+  input[type=password],
+  input[type=number],
+select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 18px;
+    display: inline-block;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  label {
+    font-size: 1.2rem;
+  }
+  
+  .value {
+    font-size: 1.2rem;
+    color: var(--value-color);
+  }
+  
+  .state {
+    font-size: 1.2rem;
+    color: var(--state-color);
+  }
+  
+  button {
+    background-color: var(--submit-bg-color);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+  }
+  
+  .button-on {
+    background-color: var(--button-on-bg-color);
+  }
+  
+  .button-on:hover {
+    background-color: var(--button-on-hover-bg-color);
+  }
+  
+  .button-off {
+    background-color: var(--button-off-bg-color);
+  }
+  
+  .button-off:hover {
+    background-color: var(--button-off-hover-bg-color);
+  }
