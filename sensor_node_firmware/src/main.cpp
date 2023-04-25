@@ -269,7 +269,7 @@ void setup() {
     // Endpoint to reset MCU (remove network configurations)
     server.on("/reset", HTTP_GET, [](AsyncWebServerRequest *request){
       if (onReset()) {
-        request->send(200, "text/plain", "Network configuration files deleted. Restart the device.");
+        request->send(200, "text/plain", "reset_success.");
         restartSensorNode();
       }
       else {
@@ -280,7 +280,7 @@ void setup() {
 
     // Endpoint to restart Server node
     server.on("/restart", HTTP_GET, [](AsyncWebServerRequest *request){
-      const char* SENSOR_RESTART = "Restarting the Sensor node...";
+      const char* SENSOR_RESTART = "restart_success";
       request->send(200, "text/plain", SENSOR_RESTART);
       restartSensorNode();
     });
