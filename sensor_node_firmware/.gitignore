@@ -7,4 +7,5 @@
 **/.DS_Store
 
 /data/ip.txt
+/data/ssid.txt
 /data/pass.txt
